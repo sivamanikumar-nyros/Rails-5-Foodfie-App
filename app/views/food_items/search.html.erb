@@ -1,0 +1,73 @@
+<div class="container-fluid search_main">
+  <div class="search_page">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="row">
+          <div class="col-md-4" id="filters">
+            <div class="row" >
+              <div class="col-md-4" >
+                <p class="filter_style">FILTER</p>
+              </div>
+              <div class="col-md-8">
+                <%= select_tag("food_items_page", options_for_select([["RATING","rating"],["PRICE","price"]]), {prompt: 'SORT BY', :name => "products_per_page", :class=>" sorting form-control", id:"filter", remote: true} ) %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+              <%= select_tag("food_items_page", options_for_select([["5+","5+"],["7+","7+"],["9+","9+"]]), {prompt: 'ALL RATINGS', :name => "products_per_page", :class=>" sorting form-control", id:"ratingfilter", remote: true} ) %>
+          </div>
+          <div class="col-md-4">
+            <div class="container">
+              <div class="dropdown" id="multiselect">
+                <button type="button"  class="dropdown-toggle select_btn form-control" data-toggle="dropdown"> 
+                ALL DIETARY REQUIREMENTS<span class="caret"></span></button>
+                <div class="dropdown-menu">
+                  <div class="taggings">
+                    <ul>
+                      <span class="meals">MEALS</span>
+                        <%= @taggings.find_each do |tagging| %>
+                          <li><%= check_box tagging.id,nil, :class=>"tagging_checker", :id=>tagging.id %>
+                            <span class="tag_title"> <%= tagging.name %></span></li>
+                        <% end %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><br/>
+        <br/>
+        <div class="row">
+          <div class="col-md-2">
+            <p class="Counting_results"><%= @food_item.count %>RESULTS</p>
+          </div><span ><i id="min" class="fa fa-inr">0</i></span>
+          <div class="col-md-8">
+            <div id="range_slider" class="slider">
+            </div>
+          </div><span><i id="max" class="fa fa-inr">500</i></span>
+        </div>
+
+        <div class="row">
+          <div class="food_item_list">
+            <%= render "food_items/food_items", search_filter: @food_item %>
+  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" id="map">
+        <div class="card z-depth-3">
+          <div class="card-content">
+          
+            <div id="map-canvas">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxBIfFGmL6adUEtytF2IYA10JZjQc5_sk&callback=initMap">
+</script>

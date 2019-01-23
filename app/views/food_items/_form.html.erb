@@ -1,0 +1,45 @@
+<div class="container">
+<%= form_with(model: food_item, local: true) do |form| %>
+  <% if food_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(food_item.errors.count, "error") %> prohibited this food_item from being saved:</h2>
+
+      <ul>
+      <% food_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, class:'form-control-label' %>
+    <%= form.text_field :name, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description, class:'form-control-label' %>
+    <%= form.text_area :description, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price, class:'form-control-label' %>
+    <%= form.text_field :price, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :section, class:'form-control-label' %>
+    <%= form.text_field :section, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image, class:'form-control-label' %>
+    <%= form.file_field :image, class:'form-control' %>
+  </div>
+
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
