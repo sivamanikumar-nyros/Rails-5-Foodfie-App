@@ -332,14 +332,14 @@ div.ui-slider-range.ui-widget-header {
 }
 #max{
   margin-left: 28px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   color: #83929a;
-  font-weight: bold;
+  font-weight: 200px;
 }
 #min{
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   color: #83929a;
-  font-weight: bold;
+  font-weight: 200px;
 }
