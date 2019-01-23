@@ -6,7 +6,7 @@
           <div class="col-md-4" id="filters">
             <div class="row" >
               <div class="col-md-4" >
-                <p class="filter_style">FILTER</p>
+                <p class="filter_style mt-2">FILTER</p>
               </div>
               <div class="col-md-8">
                 <%= select_tag("food_items_page", options_for_select([["RATING","rating"],["PRICE","price"]]), {prompt: 'SORT BY', :name => "products_per_page", :class=>" sorting form-control", id:"filter", remote: true} ) %>
