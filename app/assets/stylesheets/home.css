@@ -21,6 +21,10 @@ img {
 *{
 	padding:0;
 	margin: 0;
+
+}
+.section-img{
+  width: 100%;
 }
 body{
 	width: 100%;
@@ -128,6 +132,8 @@ li{
 	margin-left: 143px;
 	border-left-width: 1px;
   border-left: 2px solid #ededed;
+
+
 }
 .food_items_list{
 	margin-top:15%;
@@ -156,6 +162,7 @@ li{
   background: #f7aa97;
   margin-top: 100px;
   padding:50px;
+
 }
 .footer_text{
   float: left;
@@ -179,6 +186,7 @@ li{
   right: 15px;
   max-width: 315px !important;
   margin-top: 2%
+
 }
 
 .show-image-size{
@@ -191,21 +199,27 @@ li{
 	display: block;
 	overflow-y: scroll;
   padding: 10px;
+
 }
 .form-control {
     
-  width: 100%;
-  height:auto;
-  font-size: 12px;
-  color: #83929a;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 3px;
+    width: 100%;
+    height:auto;
+    font-size: 12px;
+    color: #83929a;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 3px;
+    
 }
 .sorting{
   height:40px;
 }
 
+.map{
+	width: auto;
+	height: 535px;
+}
 .food_item_location{
 	top:155px;
 	left:20px;
@@ -213,6 +227,7 @@ li{
 	color: black;
 	font-size: 0.8em;
 	font-weight: bold;
+	
 }
 .image-size{
   width: 100%;

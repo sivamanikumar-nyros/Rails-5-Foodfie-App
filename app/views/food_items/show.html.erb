@@ -2,37 +2,41 @@
   <div class="row">
     <div class="col-sm-2">
       <p>
-        <strong>DishName:</strong>
-          <%= @food_item.name %>
-      </p>
-      <p>
-        <strong>Description:</strong>
-          <%= @food_item.description %>
-      </p>
-      <p>
-        <strong>Price:</strong>
-          <%= @food_item.price %>
-      </p>
-      <p>
-        <strong>Section:</strong>
-          <%= @food_item.section %>
-      </p>
-      <p class="restaurant_name">
-        <%= @food_item.restaurants.find_each do |restaurant|%>
-          <div class="res_address">
-            <strong>restaurant_name : </strong> <%= restaurant.name%>
-            <br><br>
-            <strong>restaurant_address : </strong> <%= restaurant.address%>
-            <br><br>
-            <strong>Contact_number : </strong> <%= restaurant.phone%>
-          </div>
-          <br>
-        <% end %>
-      </p>
+  		<strong>DishName:</strong>
+  		<%= @food_item.name %>
+	</p>
+	<p>
+  		<strong>Description:</strong>
+  		<%= @food_item.description %>
+	</p>
+	<p>
+  		<strong>Price:</strong>
+  		<%= @food_item.price %>
+	</p>
+	<p>
+  		<strong>Section:</strong>
+  		<%= @food_item.section %>
+	</p>
+
+  <p class="restaurant_name">
+    <%= @food_item.restaurants.find_each do |restaurant|%>
+      
+
+      <div class="res_address">
+        <strong>restaurant_name : </strong> <%= restaurant.name%>
+        <br><br>
+        <strong>restaurant_address : </strong> <%= restaurant.address%>
+        <br><br>
+        <strong>Contact_number : </strong> <%= restaurant.phone%>
+      </div><br>
+    <% end %>
+  </p>
+	
+	              
+
     </div>
     <div class="col-sm-10">
-      <p><%= link_to(image_tag(@food_item.image.url(:original),class:"show-image-size"), food_item_path(@food_item)) %>
-      </p>
+      <p><%= link_to(image_tag(@food_item.image.url(:original),class:"show-image-size"), food_item_path(@food_item)) %></p>
     </div>
   </div>
 </div>

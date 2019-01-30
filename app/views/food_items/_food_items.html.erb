@@ -10,26 +10,26 @@
               <%= link_to(image_tag(food_item.image.url(:original),class: "image-size"), food_item_path(food_item)) %>
                </div>
                 <h1 class="food_item_name"><%= food_item.name%></h1>
-                 <%= food_item.restaurants.find_each do |restaurant| %>
+                <%= food_item.restaurants.find_each do |restaurant| %>
 
-                <h4 class="restaurant_name">
-                  <%= link_to restaurant.name, restaurants_index_path(restaurant), class:"text-style" %>   
-                </h4>
+                  <h4 class="restaurant_name">
+                    <%= link_to restaurant.name, restaurants_index_path(restaurant), class:"text-style" %>   
+                  </h4>
 
-                <p class="price_symbol"><i class="fa fa-inr"></i><%= food_item.price %></p>
+                  <p class="price_symbol"><i class="fa fa-inr"></i><%= food_item.price %></p>
 
-                <div class="rating_background">
-                  <p class="rating_symbol"><%= image_tag('love.png')%>  &nbsp<%= food_item.rating %><br>
-                  <span class="voting">1 vote</span>
-                  </p>
-                </div>
-
-                <div class="food_items_location">
-                  <div>
-                    <p><span class="location_img"><%= image_tag('locations.png',:class=>"location_image")%></span> <%= restaurant.address %></p>
+                  <div class="rating_background">
+                    <p class="rating_symbol"><%= image_tag('love.png')%>  &nbsp<%= food_item.rating %><br>
+                    <span class="voting">1 vote</span>
+                    </p>
                   </div>
-                </div>
-              <% end %>
+
+                  <div class="food_items_location">
+                    <div>
+                      <p><span class="location_img"><%= image_tag('locations.png',:class=>"location_image")%></span> <%= restaurant.address %></p>
+                    </div>
+                  </div>
+                <% end %>
           </figure>
         </div>
       <% end %>
